@@ -1,0 +1,13 @@
+
+<form>
+    <input ng-model="vm.searchText" type="text">
+    <button ng-click="vm.searchGiphy(vm.searchText)">Search</button>
+</form>
+
+<image ng-src="{{vm.searchResult[vm.offsetValue].images.fixed_height.url}}">
+    <span>
+        <button ng-click="vm.favoriteButton(vm.searchResult[vm.offsetValue].images.fixed_height.url)">Favorite This!</button>
+    </span>
+</image>
+<button ng-click="vm.prevGif()">Prev</button>
+<button ng-click="vm.nextGif()">Next</button>
