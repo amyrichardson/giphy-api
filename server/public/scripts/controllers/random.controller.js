@@ -1,4 +1,4 @@
-app.controller('RandomController', ['$http', 'GiphyService', function($http, GiphyService){
+app.controller('RandomController', ['GiphyService', function(GiphyService){
     console.log('RandomController loaded');
     const self = this;
 
@@ -9,5 +9,9 @@ app.controller('RandomController', ['$http', 'GiphyService', function($http, Gip
     self.getRandom = function () {
         GiphyService.getRandom();
     } //end getRandom
-
+    
+    self.favoriteGif = function(gif) {
+        GiphyService.favoriteGif(gif);
+    }
 }]);
+

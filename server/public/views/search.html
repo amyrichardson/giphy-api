@@ -6,7 +6,9 @@
 
 <div>
     <image ng-src="{{vm.searchResult.list[vm.searchResult.pagination].images.fixed_height.url}}"></image>
-    
 </div>
+<div>
     <button ng-click="vm.prevGif()">Previous</button>
     <button ng-click="vm.nextGif()">Next</button>
+</div>
+<button ng-click="vm.favoriteGif(vm.searchResult.list[vm.searchResult.pagination].images.fixed_height.url)">Favorite</button>

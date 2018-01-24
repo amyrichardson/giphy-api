@@ -1,4 +1,4 @@
-app.controller('SearchController', ['$http', 'GiphyService', function($http, GiphyService){
+app.controller('SearchController', ['GiphyService', function(GiphyService){
     console.log('SearchController loaded');
     const self = this;
 
@@ -19,4 +19,8 @@ app.controller('SearchController', ['$http', 'GiphyService', function($http, Gip
     self.nextGif = function() {
         GiphyService.nextGif();
     } //end nextGif
+
+    self.favoriteGif = function(gif) {
+        GiphyService.favoriteGif(gif);
+    }
 }]);
