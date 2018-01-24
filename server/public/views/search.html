@@ -1,10 +1,10 @@
 
 <form>
     <input ng-model="vm.searchText" type="text">
-    <md-button class="md-primary md-raised" ng-click="vm.searchGiphy(vm.searchText)">Search</md-button>
+    <button ng-click="vm.searchGiphy(vm.searchText)">Search</button>
 </form>
 
-<div>
-    <image width="500" ng-src="{{vm.searchResult[vm.offsetValue].images.fixed_height.url}}"></image>
+<div ng-repeat="images in vm.searchResult">
+    <image width="500" ng-src="{{images.images.fixed_height.url}}"></image>
 </div>
 

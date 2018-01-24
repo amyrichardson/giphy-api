@@ -1,4 +1,4 @@
-app.controller('SearchController', ['$http', function($http){
+app.controller('SearchController', ['$http', 'GiphyService', function($http, GiphyService){
     console.log('SearchController loaded');
     const self = this;
 
@@ -11,8 +11,8 @@ app.controller('SearchController', ['$http', function($http){
             }
         }
         $http.get(url, config).then(function(response){
-            self.count = response.data.pagination.count;
-            self.offsetValue = response.data.pagination.offset;
+            console.log('response', response);
+            
             self.searchResult = response.data.data;
         })
     } //end searchGiphy
