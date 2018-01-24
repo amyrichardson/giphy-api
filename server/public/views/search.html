@@ -4,7 +4,7 @@
     <button ng-click="vm.searchGiphy(vm.searchText)">Search</button>
 </form>
 
-<div ng-repeat="images in vm.searchResult">
+<div ng-repeat="images in vm.searchResult.list">
     <image width="500" ng-src="{{images.images.fixed_height.url}}"></image>
 </div>
 
