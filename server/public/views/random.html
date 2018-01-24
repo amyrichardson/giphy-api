@@ -1,2 +1,4 @@
-<button ng-click="vm.getRandom()">Get a Random Gif</button>
-<image ng-src="{{vm.randomResult.image_url}}"></image>
+<md-button class="md-raised md-primary" ng-click="vm.getRandom()">Get a Random Gif</md-button>
+<div>
+    <image width="500" ng-src="{{vm.randomResult.image_url}}"></image>
+</div>

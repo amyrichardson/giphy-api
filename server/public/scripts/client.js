@@ -1,6 +1,6 @@
 console.log('js');
 
-const app = angular.module('giphyApp', ['ngRoute']);
+const app = angular.module('giphyApp', ['ngRoute', 'ngMaterial']);
 
 app.config(function($routeProvider) {
     console.log('config loaded');
@@ -18,3 +18,8 @@ app.config(function($routeProvider) {
         );
 
 });
+
+app.config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('pink');
+  });
