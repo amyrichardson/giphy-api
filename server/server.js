@@ -4,7 +4,9 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const favoritesRouter = require('./routes/favorites.router');
+const env = require('dotenv').config();
 
+console.log(process.env.GIPHY_API);
 //Bring in static files/body parser
 app.use(express.static('./server/public'));
 app.use(bodyParser.urlencoded({extended: true}));
