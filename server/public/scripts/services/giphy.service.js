@@ -16,24 +16,13 @@ app.service('GiphyService', ['$http', function($http){
 
     //giphy api - search gifs
     self.searchGiphy = function(searchText) {
-        
-        let url = 'http://api.giphy.com/v1/gifs/search';
-        let config = {
-            params: {
-                api_key: 
-                q: searchText
-            }
-        } //end config
 
+        $http.get(`/giphy/search/${searchText}`).then(function(response){
+            self.searchResult.pagination = response.data.pagination.offset;
+            self.searchResult.count = response.data.pagination.count;
+            self.searchResult.list = response.data.data;
+        });
 
-        // $http.get(url, config).then(function(response){
-        //     console.log('response', response);
-        //     self.searchResult.pagination = response.data.pagination.offset;
-        //     self.searchResult.count = response.data.pagination.count;
-        //     self.searchResult.list = response.data.data;
-            
-        //     console.log('hi', self.searchResult.list[0]);
-        // })
     } //end searchGiphy
 
     //get prev gif from search
